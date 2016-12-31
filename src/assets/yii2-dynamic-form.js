@@ -475,21 +475,21 @@
         }
 		
 		// "kartik-v/yii2-widget-datecontrol"
-        var $hasDateControl = $(widgetOptionsRoot.widgetItem).find('[data-krajee-datecontrol]');
-        if ($hasDateControl.length > 0) {
-            $hasDateControl.each(function() {
-                var id = $(this).attr('id');
-                var dcElementOptions = eval($(this).attr('data-krajee-datecontrol'));
-                if (id.indexOf(dcElementOptions.idSave) < 0) {
-                    // initialize the NEW DateControl element
-                    var cdNewOptions = $.extend(true, {}, dcElementOptions);
-                    cdNewOptions.idSave = $(this).parent().next().attr('id');
-                    $(this).removeAttr('value name data-krajee-datecontrol');
-                    $(this).datecontrol(cdNewOptions);
-					
-                }
-            });
-        }
+		var $hasDateControl = $(widgetOptionsRoot.widgetItem).find('[data-krajee-datecontrol]');
+		if ($hasDateControl.length > 0) {
+			$hasDateControl.each(function() {
+				var id = $(this).attr('id');
+				var dcElementOptions = eval($(this).attr('data-krajee-datecontrol'));
+				if (id.indexOf(dcElementOptions.idSave) < 0) {
+					// initialize the NEW DateControl element
+					var dcElementOptions = $.extend(true, {}, dcElementOptions);
+					dcElementOptions.idSave = $(this).parent().next().attr('id');
+					// $(this).removeAttr('value name data-krajee-datecontrol');
+					$(this).removeAttr('value data-krajee-datecontrol');
+				}
+				$(this).datecontrol(dcElementOptions);
+			});
+		}
 		
         // "kartik-v/yii2-widget-datetimepicker"
         var $hasDatetimepicker = $(widgetOptionsRoot.widgetItem).find('[data-krajee-datetimepicker]');
