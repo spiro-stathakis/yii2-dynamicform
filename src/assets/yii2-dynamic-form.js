@@ -485,7 +485,7 @@
 					var dcElementOptions = $.extend(true, {}, dcElementOptions);
 					dcElementOptions.idSave = $(this).parent().next().attr('id');
 					// $(this).removeAttr('value name data-krajee-datecontrol');
-					$(this).removeAttr('value data-krajee-datecontrol');
+					$(this).removeAttr('data-krajee-datecontrol');
 				}
 				$(this).datecontrol(dcElementOptions);
 			});
