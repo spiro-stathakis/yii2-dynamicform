@@ -124,12 +124,12 @@
         var count = _count($elem, widgetOptions);
 
         if (count < widgetOptions.limit) {
-            // $toclone = widgetOptions.template;
-			if (count == 0) {
-				$toclone = $(widgetOptions.template);
-			} else {
-				$toclone = $(widgetOptions.widgetItem).first();
-			}
+            $toclone = widgetOptions.template;
+			// if (count == 0) {
+				// $toclone = $(widgetOptions.template);
+			// } else {
+				// $toclone = $(widgetOptions.widgetItem).first();
+			// }
 			
 			$newclone = $toclone.clone(false, false);
 
